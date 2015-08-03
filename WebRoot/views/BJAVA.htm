@@ -1,0 +1,1748 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0031)http://localhost:8080/sunshine/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<title>BJAVA</title>
+
+			<meta name="Keywords" content="BJAVA">
+				<meta name="Description" content="A java share platform">
+					<link rel="SHORTCUT ICON"
+						href="http://localhost:8080/sunshine/themes/default/icons/favicon.ico">
+
+						<link rel="stylesheet" href="./BJAVA_files/screen.css"
+							type="text/css" media="screen, projection">
+							<link rel="stylesheet" href="./BJAVA_files/print.css"
+								type="text/css" media="print">
+								<!--[if lt IE 8]>
+    <link rel="stylesheet" href="/sunshine/themes/default/css/ie.css" type="text/css" media="screen, projection"/>
+    <![endif]-->
+
+								<!-- plugins -->
+								<link rel="stylesheet" href="./BJAVA_files/screen(1).css"
+									type="text/css" media="screen, projection">
+
+
+									<script type="text/javascript"
+										src="./BJAVA_files/jquery.min.js"></script>
+									<script type="text/javascript" src="./BJAVA_files/global.js"></script>
+
+									<link rel="stylesheet" type="text/css"
+										href="./BJAVA_files/jHtmlArea.css">
+										<script type="text/javascript"
+											src="./BJAVA_files/jquery.jHtmlArea.min.js"></script>
+
+										<script type="text/javascript"
+											src="./BJAVA_files/jquery.form.min.js"></script>
+										<script type="text/javascript"
+											src="./BJAVA_files/jquery.busy.min.js"></script>
+
+										<link rel="stylesheet" type="text/css"
+											href="./BJAVA_files/jquery.datePicker.css">
+											<script type="text/javascript"
+												src="./BJAVA_files/jquery.datePicker.js"></script>
+											<script type="text/javascript" src="./BJAVA_files/date.js"></script>
+
+											<link rel="stylesheet" type="text/css"
+												href="./BJAVA_files/jquery.simplemodal.css">
+												<script type="text/javascript"
+													src="./BJAVA_files/jquery.simplemodal.min.js"></script>
+
+												<link rel="stylesheet" type="text/css"
+													href="./BJAVA_files/jquery.aqLayer.css">
+													<script type="text/javascript"
+														src="./BJAVA_files/jquery.aqLayer.min.js"></script>
+
+													<link rel="stylesheet" type="text/css"
+														href="./BJAVA_files/jquery.zTree.css">
+														<script type="text/javascript"
+															src="./BJAVA_files/jquery.zTree.min.js"></script>
+
+														<script type="text/javascript"
+															src="./BJAVA_files/jquery.cycle.min.js"></script>
+
+														<link rel="stylesheet" href="./BJAVA_files/style.css"
+															type="text/css" media="screen, projection">
+															<link rel="stylesheet" href="./BJAVA_files/fragment.css"
+																type="text/css" media="screen, projection">
+																<script type="text/javascript">
+	$(document).ready(function() {
+		var hasLeftColumn = $.trim($('#body .left-column').html()) != '';
+		var hasRightColumn = $.trim($('#body .right-column').html()) != '';
+		if (!hasLeftColumn) {
+			$('#body .left-column').remove();
+			$('#body .main-column').addClass('span-16');
+		}
+		if (!hasRightColumn) {
+			$('#body .right-column').remove();
+			$('#body .main-column').addClass('span-19');
+			$('#body .main-column').addClass('last');
+		}
+		if (!hasLeftColumn && !hasRightColumn) {
+			$('#body .left-column').remove();
+			$('#body .right-column').remove();
+			$('#body .main-column').addClass('span-24');
+			$('#body .main-column').addClass('last');
+		}
+	});
+</script>
+	</head>
+	<body>
+		<div class="container">
+			<div id="head">
+				<a href="http://localhost:8080/sunshine"> <img id="logo"
+						src="./BJAVA_files/logo.png">
+				</a>
+				<div id="wrapper">
+
+					<div id="user-menu">
+
+
+
+
+
+						<ul>
+
+
+							<li>
+								<a href="http://localhost:8080/sunshine/login">登录</a>
+							</li>
+							<li class="last">
+								<a href="http://localhost:8080/sunshine/register">注册</a>
+							</li>
+
+
+
+						</ul>
+
+
+
+
+					</div>
+
+
+					<div id="site-search">
+
+
+
+
+						<form id="site-search-form" class="inline"
+							action="http://localhost:8080/sunshine/search" method="GET">
+							<select id="categoryId" name="categoryId">
+								<option value="">
+									全站
+								</option>
+								<option value="2">
+									成员
+								</option>
+								<option value="1">
+									成员列表
+								</option>
+							</select>
+							<input id="keywords" name="keywords" type="text" value="">
+								<input type="submit" value="搜索">
+						</form>
+					</div>
+
+				</div>
+				<br class="clear">
+
+					<div id="main-menu">
+
+
+
+
+						<ul>
+
+							<li>
+								<a href="./BJAVA_files/BJAVA.htm" title="主页"> <span>主页</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="http://localhost:8080/sunshine/tech" title="技术文章">
+									<span>技术文章</span> </a>
+							</li>
+
+
+							<li>
+								<a href="http://localhost:8080/sunshine/aq" title="问答"> <span>问答</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="./BJAVA_files/BJAVA.htm" title="主页"> <span>在线文档</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="./BJAVA_files/BJAVA.htm" title="主页"> <span>视频教程</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="./BJAVA_files/BJAVA.htm" title="主页"> <span>软件下载</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="./BJAVA_files/BJAVA.htm" title="主页"> <span>工作机会</span>
+								</a>
+							</li>
+
+
+
+							<!-- 
+	
+	
+		<li>
+			<a href="/sunshine/person" title='成员"'>
+				<span>成员</span>
+			</a>
+		</li>
+	
+	
+	
+		<li>
+			<a href="/sunshine/people" title='成员列表"'>
+				<span>成员列表</span>
+			</a>
+		</li>
+	
+	
+	 -->
+						</ul>
+					</div>
+
+
+					<div id="sub-menu">
+
+					</div>
+			</div>
+			<div id="body">
+
+
+
+				<div class="span-11 main-column span-16">
+					<div id="7361c531-ec85-4f98-8577-56722c0a88e9" class="fragment">
+
+						<div class="head">
+							<h3>
+								JAVA 文档
+							</h3>
+						</div>
+
+						<div class="body">
+							<ul id="activities-list7361c531-ec85-4f98-8577-56722c0a88e9"
+								class="activities-list">
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="78"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=78">
+													广告位 </a>
+											</div>
+											<a href="/sunshine/docs/java/index.html" target="blank">
+												JDK1.5 中文在线文档 </a>
+										</div>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="77"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=77">
+													广告位 </a>
+											</div>
+											<a href="/sunshine/docs/java6/index.html" target="blank">
+												JDK1.6 中文在线文档 </a>
+										</div>
+									</div>
+								</li>
+						</div>
+					</div>
+
+					<div id="7361c531-ec85-4f98-8577-56722c0a88e9" class="fragment">
+
+						<div class="head">
+							<h3>
+								数据库文档
+							</h3>
+						</div>
+
+						<div class="body">
+
+
+
+							<ul id="activities-list7361c531-ec85-4f98-8577-56722c0a88e9"
+								class="activities-list">
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="78"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=78">
+													广告位</a>
+											</div>
+											<a href="/sunshine/docs/mysql/index.html" target="blank">
+												MYSQL 中文文档 </a>
+										</div>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div id="7361c531-ec85-4f98-8577-56722c0a88e9" class="fragment">
+
+						<div class="head">
+							<h3>
+								前端文档
+							</h3>
+						</div>
+
+						<div class="body">
+
+
+
+							<ul id="activities-list7361c531-ec85-4f98-8577-56722c0a88e9"
+								class="activities-list">
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="78"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=78">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/59">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list78" class="comments-list"></ul>
+										<form id="activity-comment-form78"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="77"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=77">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/58">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list77" class="comments-list"></ul>
+										<form id="activity-comment-form77"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="76"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=76">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												072OSY </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/57">
+												使用 CSS3 中的伪类渲染表格 </a>
+
+
+
+										</div>
+										<ul id="comments-list76" class="comments-list"></ul>
+										<form id="activity-comment-form76"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="75"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=75">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												000g4y </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/56">
+												sss </a>
+
+
+
+										</div>
+										<ul id="comments-list75" class="comments-list"></ul>
+										<form id="activity-comment-form75"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity last">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="74"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=74">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a> 更新了
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a>
+
+
+
+										</div>
+										<ul id="comments-list74" class="comments-list"></ul>
+										<form id="activity-comment-form74"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+							</ul>
+
+							<div style="text-align: center">
+								<a id="more-action7361c531-ec85-4f98-8577-56722c0a88e9"
+									href="http://localhost:8080/sunshine/process/fragment/7361c531-ec85-4f98-8577-56722c0a88e9">广告位</a>
+							</div>
+
+
+
+						</div>
+					</div>
+
+					<div id="7361c531-ec85-4f98-8577-56722c0a88e9" class="fragment">
+
+						<div class="head">
+							<h3>
+								视频教程
+							</h3>
+						</div>
+
+						<div class="body">
+
+
+
+							<ul id="activities-list7361c531-ec85-4f98-8577-56722c0a88e9"
+								class="activities-list">
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="78"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=78">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/59">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list78" class="comments-list"></ul>
+										<form id="activity-comment-form78"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="77"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=77">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/58">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list77" class="comments-list"></ul>
+										<form id="activity-comment-form77"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="76"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=76">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												072OSY </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/57">
+												使用 CSS3 中的伪类渲染表格 </a>
+
+
+
+										</div>
+										<ul id="comments-list76" class="comments-list"></ul>
+										<form id="activity-comment-form76"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="75"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=75">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												000g4y </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/56">
+												sss </a>
+
+
+
+										</div>
+										<ul id="comments-list75" class="comments-list"></ul>
+										<form id="activity-comment-form75"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity last">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="74"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=74">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a> 更新了
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a>
+
+
+
+										</div>
+										<ul id="comments-list74" class="comments-list"></ul>
+										<form id="activity-comment-form74"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+							</ul>
+
+							<div style="text-align: center">
+								<a id="more-action7361c531-ec85-4f98-8577-56722c0a88e9"
+									href="http://localhost:8080/sunshine/process/fragment/7361c531-ec85-4f98-8577-56722c0a88e9">广告位</a>
+							</div>
+
+
+
+						</div>
+					</div>
+
+					<div id="7361c531-ec85-4f98-8577-56722c0a88e9" class="fragment">
+
+						<div class="head">
+							<h3>
+								软件下载
+							</h3>
+						</div>
+
+						<div class="body">
+
+
+
+							<ul id="activities-list7361c531-ec85-4f98-8577-56722c0a88e9"
+								class="activities-list">
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="78"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=78">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/59">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list78" class="comments-list"></ul>
+										<form id="activity-comment-form78"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="77"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=77">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/58">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list77" class="comments-list"></ul>
+										<form id="activity-comment-form77"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="76"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=76">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												072OSY </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/57">
+												使用 CSS3 中的伪类渲染表格 </a>
+
+
+
+										</div>
+										<ul id="comments-list76" class="comments-list"></ul>
+										<form id="activity-comment-form76"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="75"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=75">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												000g4y </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/56">
+												sss </a>
+
+
+
+										</div>
+										<ul id="comments-list75" class="comments-list"></ul>
+										<form id="activity-comment-form75"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity last">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="74"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=74">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a> 更新了
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a>
+
+
+
+										</div>
+										<ul id="comments-list74" class="comments-list"></ul>
+										<form id="activity-comment-form74"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+							</ul>
+
+							<div style="text-align: center">
+								<a id="more-action7361c531-ec85-4f98-8577-56722c0a88e9"
+									href="http://localhost:8080/sunshine/process/fragment/7361c531-ec85-4f98-8577-56722c0a88e9">广告位</a>
+							</div>
+
+
+
+						</div>
+					</div>
+
+					<div id="7361c531-ec85-4f98-8577-56722c0a88e9" class="fragment">
+
+						<div class="head">
+							<h3>
+								工作机会
+							</h3>
+						</div>
+
+						<div class="body">
+
+
+
+							<ul id="activities-list7361c531-ec85-4f98-8577-56722c0a88e9"
+								class="activities-list">
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="78"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=78">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/59">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list78" class="comments-list"></ul>
+										<form id="activity-comment-form78"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="77"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=77">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												j4RE5s </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/q1xh4o-8/blog/post/58">
+												一小时内从电子表格创建 IBM Business Monitor 仪表板，第 1 部分: 使用免费 CSV
+												工具创建仪表板 </a>
+
+
+
+										</div>
+										<ul id="comments-list77" class="comments-list"></ul>
+										<form id="activity-comment-form77"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="76"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=76">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												072OSY </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/57">
+												使用 CSS3 中的伪类渲染表格 </a>
+
+
+
+										</div>
+										<ul id="comments-list76" class="comments-list"></ul>
+										<form id="activity-comment-form76"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="75"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=75">
+													评论(0) </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												000g4y </a> 更新了
+											<a
+												href="http://localhost:8080/sunshine/haozhonghu-1/blog/post/56">
+												sss </a>
+
+
+
+										</div>
+										<ul id="comments-list75" class="comments-list"></ul>
+										<form id="activity-comment-form75"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity last">
+									<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">广告位</span>
+												<a class="comment-action" id="74"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=74">
+													广告位 </a>
+											</div>
+
+
+
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a> 更新了
+											<a href="http://localhost:8080/sunshine/q1xh4o-8/profile">
+												q1Xh4o </a>
+
+
+
+										</div>
+										<ul id="comments-list74" class="comments-list"></ul>
+										<form id="activity-comment-form74"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+							</ul>
+
+							<div style="text-align: center">
+								<a id="more-action7361c531-ec85-4f98-8577-56722c0a88e9"
+									href="http://localhost:8080/sunshine/process/fragment/7361c531-ec85-4f98-8577-56722c0a88e9">广告位</a>
+							</div>
+
+
+
+						</div>
+					</div>
+
+
+					<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						var pageNo = 2;
+						$('#more-action7361c531-ec85-4f98-8577-56722c0a88e9')
+								.click(
+										function() {
+											var self = this;
+											var url = $(this).attr('href');
+											var params = {
+												'pageNo' : pageNo,
+												'uniqueId' : ''
+											};
+											$
+													.get(
+															url,
+															params,
+															function(html) {
+																$(html)
+																		.find(
+																				'.activities-list')
+																		.contents()
+																		.appendTo(
+																				$('#activities-list7361c531-ec85-4f98-8577-56722c0a88e9'));
+																if ((pageNo + 1) < 14) {
+																	pageNo++;
+																} else {
+																	$(self)
+																			.hide();
+																}
+															});
+											return false;
+										});
+
+						$('.activity-comment-form').ajaxForm( {
+							dataType : 'json',
+							clearForm : true,
+							beforeSubmit : function(formData, $form) {
+								var content = $.trim(formData[0].value);
+								if (content == '') {
+									return false;
+								}
+							},
+							success : function(comment) {
+								_fillCommentListContainer(comment)
+							}
+						});
+
+						$('.comment-action').click(function() {
+							showCommentList(this);
+							showCommentForm(this);
+							return false;
+						});
+
+						function showCommentForm(link) {
+							var id = $(link).attr('id');
+							$('#activity-comment-form' + id).show();
+						}
+
+						function showCommentList(link) {
+							var id = $(link).attr('id');
+							if ($('#comments-list' + id).find('li').size() == 0) {
+								var url = $(link).attr('href');
+								$.get(url, function(comments) {
+									for (i in comments) {
+										_fillCommentListContainer(comments[i]);
+									}
+								});
+							}
+						}
+
+						function _fillCommentListContainer(comment) {
+							var item = '__tag_1867$14_' + '__tag_1868$8_';
+							if (comment.enteredBy_project_profile_logo_id != null) {
+								item += '__tag_1870$12_';
+							} else {
+								item += '__tag_1872$12_';
+							}
+							item += '__tag_1874$15_';
+							item += '__tag_1875$12_' + comment.content
+									+ '__tag_1875$58_' + '__tag_1876$6_'
+									+ comment.entered_pretty + '__tag_1876$56_'
+									+ '__tag_1877$6_' + '__tag_1878$6_';
+							$('#comments-list' + comment.linkedId).append(item);
+						}
+					});
+</script>
+				</div>
+
+
+				<div class="span-8 last right-column">
+
+
+
+					<div id="9d952e29-7958-426b-9b58-9b05f10237c6" class="fragment">
+
+						<div class="head">
+							<h3>
+								公告牌
+							</h3>
+						</div>
+
+						<div class="body">
+
+							<ul>
+								<li>
+									官方QQ群开放了：591301927
+								</li>
+								<li>
+									本站@
+									<a href="http://t.sina.com.cn/opensourceforce">新浪微博</a>，欢迎Follow
+								</li>
+							</ul>
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+					<div id="2b8183b3-fd78-4252-b82c-3f9fbf0af6a7" class="fragment">
+
+						<div class="head">
+							<h3>
+								最新话题
+							</h3>
+						</div>
+
+						<div class="body">
+
+
+
+							<ul id="activities-list2b8183b3-fd78-4252-b82c-3f9fbf0af6a7"
+								class="activities-list">
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/liaobo626-2/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">1 month ago</span>
+												<a class="comment-action" id="9"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=9">
+													广告位 </a>
+											</div>
+
+
+											sunshine第一次，上线，谢谢支持！
+
+
+
+
+										</div>
+										<ul id="comments-list9" class="comments-list"></ul>
+										<form id="activity-comment-form9"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity">
+									<a href="http://localhost:8080/sunshine/liaobo626-2/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">1 month ago</span>
+												<a class="comment-action" id="6"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=6">
+													广告位 </a>
+											</div>
+
+
+											JAVA 技术
+
+
+
+
+										</div>
+										<ul id="comments-list6" class="comments-list"></ul>
+										<form id="activity-comment-form6"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+								<li class="activity last">
+									<a href="http://localhost:8080/sunshine/haozhonghu-1/profile">
+
+
+
+										<img class="top left thumbnail" src="./BJAVA_files/people.png"
+											width="40" height="40">
+									</a>
+									<div class="activity-wrapper">
+										<div class="activity-body">
+											<div class="right">
+												<span class="pretty-tim ">2 years ago</span>
+												<a class="comment-action" id="2"
+													href="http://localhost:8080/sunshine/process/commons/comments?entity=Activity&linkedId=2">
+													评论(1) </a>
+											</div>
+
+
+											here is site chat...
+
+
+
+
+										</div>
+										<ul id="comments-list2" class="comments-list"></ul>
+										<form id="activity-comment-form2"
+											class="activity-comment-form" style="display: none;"
+											action="http://localhost:8080/sunshine/process/commons/comment"
+											method="post">
+
+
+											<div class="notice">
+												添加评论，请先
+												<a href="http://localhost:8080/sunshine/app/login/form"
+													class="loginAction">登录</a>
+											</div>
+
+
+
+										</form>
+									</div>
+								</li>
+
+							</ul>
+
+
+
+						</div>
+					</div>
+
+
+					<script type="text/javascript">
+$(document).ready(function(){
+	var pageNo = 2;
+	$('#more-action2b8183b3-fd78-4252-b82c-3f9fbf0af6a7').click(function(){
+		var self = this;
+		var url = $(this).attr('href');
+		var params = {'pageNo':pageNo,'uniqueId':''};
+		$.get(url, params, function(html){
+			$(html).find('.activities-list').contents().appendTo($('#activities-list2b8183b3-fd78-4252-b82c-3f9fbf0af6a7'));
+			if((pageNo+1)<1) {
+				pageNo++;
+			} else {
+				$(self).hide();
+			}
+		});
+		return false;
+	});
+
+	$('.activity-comment-form').ajaxForm({
+		dataType: 'json',
+		clearForm: true,
+		beforeSubmit: function(formData, $form) {
+			var content = $.trim(formData[0].value);
+			if(content=='') {
+				return false;
+			}
+		},
+		success: function(comment){
+			_fillCommentListContainer(comment)
+		}
+	});
+
+	$('.comment-action').click(function(){
+		showCommentList(this);
+		showCommentForm(this);
+		return false;
+	});
+
+	function showCommentForm(link) {
+		var id = $(link).attr('id');
+		$('#activity-comment-form'+id).show();
+	}
+
+	function showCommentList(link) {
+		var id = $(link).attr('id');
+		if($('#comments-list'+id).find('li').size()==0) {
+			var url = $(link).attr('href');
+			$.get(url, function(comments){
+				for(i in comments) {
+					_fillCommentListContainer(comments[i]);
+				}
+			});
+		}
+	}
+
+	function _fillCommentListContainer(comment) {
+		var item = '<li>' +
+							'<a href="/sunshine/'+ comment.enteredBy_project_uniqueId +'/profile">';
+		if(comment.enteredBy_project_profile_logo_id!=null) {
+			item += '<img class="top left thumbnail" src="/sunshine/logo/download/'+ comment.enteredBy_project_profile_logo_id +'/35x35"/>';
+		} else {
+			item += '<img class="top left thumbnail" src="/sunshine/themes/default/stock/'+ comment.enteredBy_project_category_code +'.png" width="35" height="35"/>';
+		}
+		item +=     '</a>';
+		item += 	'<p class="comment-content">'+comment.content+'</p>' +
+					'<span class="top right">'+comment.entered_pretty+'</span>' +
+					'<br class="clear"/>' +
+					'</li>';
+		$('#comments-list'+comment.linkedId).append(item);
+	}
+});
+</script>
+				</div>
+
+				<br class="clear">
+			</div>
+
+			<div id="foot">
+
+
+
+				<div id="copyright">
+
+
+					© Enterprise Connect 2010-2011
+					<a>BJAVA</a> Powered By
+					<a>Enterprise Connect</a>
+
+
+
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+</html>
