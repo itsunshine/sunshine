@@ -48,5 +48,13 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/standard-1.1.2.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dsn.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/gimap.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/imap.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/pop3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/smtp.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
