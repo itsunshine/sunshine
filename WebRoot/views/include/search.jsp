@@ -5,15 +5,21 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="left-search-box">
+<!-- 
 	<form class="J-search-form">
+	 -->
 		<div class="search-box" style="position: relative;">
 			<input type="text" id="keyword" maxlength="30" topic="请输入职位关键词" class="search-text">
 			<input class="search-btn" type="button" value="搜索" id="schbtn">
+			<!-- 
 			<input type="hidden" name="“dress-check”" id="dress-check">
 			<input type="hidden" name="“position-check”" id="position-check">
 			<input type="hidden" name="“position-first-check”" id="position-first-check" value="技术类">
+			 -->
 		</div>
+		<!-- 
 	</form>
+	 -->
 	<div class="search-tab" style="padding-top: 10px;">
 		<div class="search-li-box layout"
 			style="overflow: hidden; padding-top: 6px;">
@@ -93,9 +99,6 @@ function ajaxSearch(keyword,location,company){
 	else if(!isNullOrEmpty(globalCoporation)){
 		dataObj.company=globalCoporation;
 	}
-	alert(dataObj.keywords);
-	alert(dataObj.location);
-	alert(dataObj.company);
 	$.ajax({
 		url:searchUrl,
 		type:'post',
