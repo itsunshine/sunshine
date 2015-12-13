@@ -17,18 +17,18 @@
 <link rel="stylesheet" href="<%=BaseServlet.context %>/views/BJAVA_files/fragment.css" type="text/css">
 <script type="text/javascript">
 	$(document).ready(function() {
-		var hasLeftColumn = $.trim($('#body .left-column').html()) != '';
+		//var hasLeftColumn = $.trim($('#body .left-column').html()) != '';
 		var hasRightColumn = $.trim($('#body .right-column').html()) != '';
-		if (!hasLeftColumn) {
-			$('#body .left-column').remove();
-			$('#body .main-column').addClass('span-16');
-		}
+		//if (!hasLeftColumn) {
+			//$('#body .left-column').remove();
+			//$('#body .main-column').addClass('span-16');
+		//}
 		if (!hasRightColumn) {
 			$('#body .right-column').remove();
 			$('#body .main-column').addClass('span-19');
 			$('#body .main-column').addClass('last');
 		}
-		if (!hasLeftColumn && !hasRightColumn) {
+		if (!hasRightColumn) {
 			$('#body .left-column').remove();
 			$('#body .right-column').remove();
 			$('#body .main-column').addClass('span-24');

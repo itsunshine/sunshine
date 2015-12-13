@@ -5,6 +5,7 @@ package com.boliao.sunshine.biz.service.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.boliao.sunshine.biz.dao.JobDemandArtDao;
 import com.boliao.sunshine.biz.dao.impl.JobDemandArtDaoImpl;
+import com.boliao.sunshine.biz.dao.impl.JobDemandArtUniDaoImpl;
 import com.boliao.sunshine.biz.model.JobDemandArt;
 import com.boliao.sunshine.biz.model.PageBase;
 import com.boliao.sunshine.biz.service.JobHRService;
@@ -29,12 +31,14 @@ public class JobHRServiceImpl implements JobHRService {
 	private final Logger errLog = Logger.getLogger(LogUtil.ERROR);
 
 	private final JobDemandArtDao jobDemandArtDao;
+	private final JobDemandArtDao jobDemandArtUniDao;
 	private final SearchService searchService;
 
 	static JobHRServiceImpl jobHRServiceImpl = new JobHRServiceImpl();
 
 	private JobHRServiceImpl() {
 		this.jobDemandArtDao = JobDemandArtDaoImpl.getInstance();
+		jobDemandArtUniDao = JobDemandArtUniDaoImpl.getInstance();
 		searchService = SearchServiceImpl.getInstance();
 	}
 
@@ -54,10 +58,14 @@ public class JobHRServiceImpl implements JobHRService {
 	 * @see com.boliao.sunshine.biz.service.ArticleService#findArticleById(long)
 	 */
 	@Override
-	public JobDemandArt findJobDemandArtById(long id) {
+	public JobDemandArt findJobDemandArtById(long id, boolean isUni) {
 		JobDemandArt jobDemandArt = null;
 		try {
-			jobDemandArt = jobDemandArtDao.findArticleById(id);
+			if (!isUni) {
+				jobDemandArt = jobDemandArtDao.findArticleById(id);
+			} else {
+				jobDemandArt = jobDemandArtUniDao.findArticleById(id);
+			}
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
@@ -84,10 +92,15 @@ public class JobHRServiceImpl implements JobHRService {
 	 * .lang.String, com.boliao.sunshine.biz.model.PageBase)
 	 */
 	@Override
-	public PageBase<JobDemandArt> getPageJobDemandArtDesc(String field, PageBase<JobDemandArt> page) {
+	public PageBase<JobDemandArt> getPageJobDemandArtDesc(String field, PageBase<JobDemandArt> page, boolean isUni) {
 		List<JobDemandArt> results = null;
 		try {
-			long totalCount = jobDemandArtDao.getTotalCount();
+			long totalCount = 0;
+			if (!isUni) {
+				totalCount = jobDemandArtDao.getTotalCount();
+			} else {
+				totalCount = jobDemandArtUniDao.getTotalCount();
+			}
 			if (totalCount == 0)
 				return null;
 			page.setTotalCount(totalCount);
@@ -96,7 +109,12 @@ public class JobHRServiceImpl implements JobHRService {
 			if (page.getPageNo() >= page.getTotalPage())
 				page.setPageNo(page.getTotalPage());
 
-			results = jobDemandArtDao.getPageArticleDesc(field, page.getStart(), page.getPageSize());
+			if (!isUni) {
+				results = jobDemandArtDao.getPageArticleDesc(field, page.getStart(), page.getPageSize());
+			} else {
+				results = jobDemandArtUniDao.getPageArticleDesc(field, page.getStart(), page.getPageSize());
+			}
+
 			page.setResults(results);
 			page.setTotalCount(totalCount);
 		} catch (SecurityException e) {
@@ -121,10 +139,16 @@ public class JobHRServiceImpl implements JobHRService {
 	 * .lang.String, com.boliao.sunshine.biz.model.PageBase)
 	 */
 	@Override
-	public PageBase<JobDemandArt> queryPageJobDesc(Map<String, String> whereFs, String field, PageBase<JobDemandArt> page) {
+	public PageBase<JobDemandArt> queryPageJobDesc(Map<String, String> whereFs, String field, PageBase<JobDemandArt> page, boolean isUni) {
 		List<JobDemandArt> results = null;
 		try {
-			long totalCount = jobDemandArtDao.getTotalCount(whereFs);
+			long totalCount = 0;
+			if (!isUni) {
+				totalCount = jobDemandArtDao.getTotalCount(whereFs);
+			} else {
+				totalCount = jobDemandArtUniDao.getTotalCount(whereFs);
+			}
+
 			if (totalCount == 0) {
 				page.setTotalCount(totalCount);
 				return page;
@@ -134,8 +158,12 @@ public class JobHRServiceImpl implements JobHRService {
 			// 如果页码大于总页码，则设置页码为最后一页
 			if (page.getPageNo() >= page.getTotalPage())
 				page.setPageNo(page.getTotalPage());
+			if (!isUni) {
+				results = jobDemandArtDao.queryPageJobDesc(whereFs, field, page.getStart(), page.getPageSize());
+			} else {
+				results = jobDemandArtUniDao.queryPageJobDesc(whereFs, field, page.getStart(), page.getPageSize());
+			}
 
-			results = jobDemandArtDao.queryPageJobDesc(whereFs, field, page.getStart(), page.getPageSize());
 			page.setResults(results);
 			page.setTotalCount(totalCount);
 		} catch (SecurityException e) {
@@ -160,9 +188,14 @@ public class JobHRServiceImpl implements JobHRService {
 	 * .sunshine.biz.model.Article)
 	 */
 	@Override
-	public boolean insertJobDemandArt(JobDemandArt article) {
+	public boolean insertJobDemandArt(JobDemandArt article, boolean isUni) {
 		try {
-			long id = jobDemandArtDao.insert(article);
+			long id = 0;
+			if (!isUni) {
+				id = jobDemandArtDao.insert(article);
+			} else {
+				id = jobDemandArtUniDao.insert(article);
+			}
 			article.setId(id);
 			searchService.indexContext(article);
 			return false;
@@ -181,9 +214,15 @@ public class JobHRServiceImpl implements JobHRService {
 	}
 
 	@Override
-	public void insertBatch(List<JobDemandArt> jobDemandArts) {
+	public void insertBatch(List<JobDemandArt> jobDemandArts, boolean isUni) {
 		try {
-			List<Long> ids = jobDemandArtDao.insertBatch(jobDemandArts);
+			List<Long> ids = new ArrayList<Long>();
+			if (!isUni) {
+				ids = jobDemandArtDao.insertBatch(jobDemandArts);
+			} else {
+				ids = jobDemandArtUniDao.insertBatch(jobDemandArts);
+			}
+
 			for (int i = 0; i < jobDemandArts.size(); i++) {
 				JobDemandArt art = jobDemandArts.get(i);
 				long id = ids.get(i);

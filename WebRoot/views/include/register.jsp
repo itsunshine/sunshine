@@ -122,8 +122,7 @@
 					jqueryUIAlter("非空字段必须填！");
 													return false;
 												}
-												if (username.match(/@.+\..+/) == null) {
-													jqueryUIAlter("用户名格式不对，请使用邮箱");
+												if(!validateEmail(username,"用户名")){
 													return;
 												}
 												if(passwordPattern.exec(password) != password){

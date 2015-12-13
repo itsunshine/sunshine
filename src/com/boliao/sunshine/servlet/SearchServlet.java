@@ -14,6 +14,7 @@ import com.boliao.sunshine.biz.model.JobDemandArt;
 import com.boliao.sunshine.biz.model.PageBase;
 import com.boliao.sunshine.biz.service.SearchService;
 import com.boliao.sunshine.biz.service.impl.SearchServiceImpl;
+import com.boliao.sunshine.common.CommonConstants;
 
 public class SearchServlet extends HttpServlet {
 
@@ -68,7 +69,13 @@ public class SearchServlet extends HttpServlet {
 			PageBase<JobDemandArt> artPage = new PageBase<JobDemandArt>();
 			artPage = searchService.searchIndex(keywords, type, page.getPageNo());
 			request.setAttribute("page", artPage);
-			request.setAttribute("index", true);
+			String uri = request.getRequestURI();
+			uri += "?" + CommonConstants.KEY_WORDS + "=" + keywords;
+			// request.setAttribute("index", true);
+			request.setAttribute("type", BaseServlet.HR_KEY);
+			request.setAttribute(CommonConstants.VIEW_FLAG, 1);
+			request.setAttribute(CommonConstants.KEY_WORDS, keywords);
+			request.setAttribute("uri", uri);
 			// request.setAttribute("showFlag", JobHRProcessor.SHOW_FLAG);
 			request.setAttribute("title", "搜索到相关结果（" + artPage.getTotalCount() + "）");
 			request.getRequestDispatcher("/views/index.jsp").forward(request, response);

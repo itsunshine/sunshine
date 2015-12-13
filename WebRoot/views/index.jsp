@@ -37,6 +37,12 @@
 		<c:when test="${conFlag == 7}">
 			<%@ include file="include/jobHR.jsp"  %>
 		</c:when>
+		<c:when test="${conFlag == 8}">
+			<%@ include file="include/pInfoSettings.jsp"  %>
+		</c:when>
+		<c:when test="${conFlag == 9}">
+			<%@ include file="include/pInfoInput.jsp"  %>
+		</c:when>
 		<c:otherwise>
 			<%@ include file="include/main.jsp"  %>
 		</c:otherwise>

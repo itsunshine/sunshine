@@ -62,13 +62,14 @@ public class JobHRProcessor extends BaseProcessor {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String method = request.getParameter("m");
-		request.setAttribute("type", BaseServlet.HR_KEY);
+		String type = request.getParameter("type");
+		request.setAttribute("type", type);
 		if (StringUtils.isBlank(method)) {
-			return getPages(request, response);
+			return getPages(request, response, isUni(type));
 		} else if (StringUtils.equals(method, "getContent")) {
-			return getContent(request, response);
+			return getContent(request, response, isUni(type));
 		} else if (StringUtils.equals(method, "ajax")) {
-			ajaxSearch(request, response);
+			ajaxSearch(request, response, isUni(type));
 		}
 		return null;
 	}
@@ -79,11 +80,11 @@ public class JobHRProcessor extends BaseProcessor {
 	 * @param request
 	 * @param response
 	 */
-	public void ajaxSearch(HttpServletRequest request, HttpServletResponse response) {
+	public void ajaxSearch(HttpServletRequest request, HttpServletResponse response, boolean isUni) {
 
 		try {
 			PageBase<JobDemandArt> artPage = null;
-			artPage = this.searchJobArtDemand(request, 1);
+			artPage = this.searchJobArtDemand(request, 1, isUni);
 			JSONObject pages = JSONObject.fromObject(artPage);
 			OutputStream ops = response.getOutputStream();
 			if (pages == null || artPage.getTotalCount() == 0)
@@ -97,10 +98,10 @@ public class JobHRProcessor extends BaseProcessor {
 		}
 	}
 
-	private String getContent(HttpServletRequest request, HttpServletResponse response) {
+	private String getContent(HttpServletRequest request, HttpServletResponse response, boolean isUni) {
 		String id = request.getParameter("id");
 		if (StringUtils.isNotBlank(id) && id.matches("\\d+")) {
-			JobDemandArt jobDemandArt = jobHRService.findJobDemandArtById(Long.valueOf(id));
+			JobDemandArt jobDemandArt = jobHRService.findJobDemandArtById(Long.valueOf(id), isUni);
 			if (jobDemandArt != null) {
 				request.setAttribute("jobDemandArt", jobDemandArt);
 				request.setAttribute("conFlag", 7);
@@ -116,11 +117,13 @@ public class JobHRProcessor extends BaseProcessor {
 	 * 
 	 * @param request
 	 * @param response
+	 * @param isUni
+	 *            是否校招
 	 * @return
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	private String getPages(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private String getPages(HttpServletRequest request, HttpServletResponse response, boolean isUni) throws ServletException, IOException {
 
 		PageBase<JobDemandArt> page = new PageBase<JobDemandArt>();
 		String pageNo = request.getParameter("pageNo");
@@ -132,7 +135,7 @@ public class JobHRProcessor extends BaseProcessor {
 		String ajax = request.getParameter("ajax");
 		String uri = null;
 		if (StringUtils.isNotBlank(ajax) && StringUtils.equals("true", ajax)) {
-			page = searchJobArtDemand(request, page.getPageNo());
+			page = searchJobArtDemand(request, page.getPageNo(), isUni);
 			String location = request.getParameter("location");
 			String company = request.getParameter("company");
 			uri = request.getRequestURI();
@@ -153,7 +156,7 @@ public class JobHRProcessor extends BaseProcessor {
 
 			request.setAttribute("ajax", "true");
 		} else {
-			page = jobHRService.getPageJobDemandArtDesc("createTime", page);
+			page = jobHRService.getPageJobDemandArtDesc("createTime", page, isUni);
 			formatCreateDate(page);
 			uri = request.getRequestURI();
 		}
@@ -170,7 +173,7 @@ public class JobHRProcessor extends BaseProcessor {
 	 * 
 	 * @param keywords
 	 */
-	private PageBase<JobDemandArt> searchJobArtDemand(HttpServletRequest request, int page) {
+	private PageBase<JobDemandArt> searchJobArtDemand(HttpServletRequest request, int page, boolean isUni) {
 		StringBuilder sb = null;
 		Map<String, String> whereMap = null;
 		boolean isTextSearch = false;
@@ -209,7 +212,7 @@ public class JobHRProcessor extends BaseProcessor {
 			artPage = searchService.searchIndex(sb.toString(), BaseServlet.HR_KEY, page);
 		} else {
 			artPage.setPageNo(page);
-			artPage = jobHRService.queryPageJobDesc(whereMap, "createTime", artPage);
+			artPage = jobHRService.queryPageJobDesc(whereMap, "createTime", artPage, isUni);
 		}
 
 		formatCreateDate(artPage);
@@ -252,5 +255,19 @@ public class JobHRProcessor extends BaseProcessor {
 		JSONObject obj = new JSONObject();
 		obj.accumulate("error", errorMsg);
 		return obj.toString();
+	}
+
+	/**
+	 * 是否校招请求
+	 * 
+	 * @param type
+	 * @return
+	 */
+	private boolean isUni(String type) {
+		if (StringUtils.equals(type, BaseServlet.HR_UNI_KEY)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

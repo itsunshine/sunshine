@@ -88,11 +88,11 @@
 							<li>
 								<c:choose>
 									<c:when test="${type=='hrUni'}">
-										<a href="<%=BaseServlet.context %>/views/index.do?type=hr" title="互联网-校招" style="background-color: #ffffff;font-weight:bold;"> <span>互联网-校招</span>
+										<a href="<%=BaseServlet.context %>/views/index.do?type=hrUni" title="互联网-校招" style="background-color: #ffffff;font-weight:bold;"> <span>互联网-校招</span>
 										</a>
 									</c:when>
 									<c:otherwise>
-										<a href="<%=BaseServlet.context %>/views/index.do?type=hr" title="互联网-校招">
+										<a href="<%=BaseServlet.context %>/views/index.do?type=hrUni" title="互联网-校招">
 									<span>互联网-校招</span> </a>
 									</c:otherwise>
 								</c:choose>
@@ -149,6 +149,22 @@
 									<c:otherwise>
 										<a href="<%=BaseServlet.context %>/views/index.do?type=tool" title="在线工具"> <span>在线工具</span>
 										</a>
+									</c:otherwise>
+								</c:choose>
+								
+							</li>
+							<li>
+								<c:choose>
+									<c:when test="${(type=='personalInfoInput')&&(not empty loginedUser)}">
+										<a href="<%=BaseServlet.context %>/views/index.do?type=personalInfoInput" title="个人中心"  style="background-color: #ffffff;font-weight:bold;"> <span>个人中心</span>
+										</a>
+									</c:when>
+									<c:otherwise>
+										<c:if test="${not empty loginedUser}">
+											<a href="<%=BaseServlet.context %>/views/index.do?type=personalInfoInput" title="个人中心"> <span>个人中心</span>
+											</a>
+										</c:if>
+										
 									</c:otherwise>
 								</c:choose>
 								

@@ -136,7 +136,7 @@ public class SpiderFileProcessor {
 					jobDemandArtList.add(jobDemandArt);
 					// 对数据做批量插入
 					if (jobDemandArtList.size() == 100) {
-						jobHRService.insertBatch(jobDemandArtList);
+						jobHRService.insertBatch(jobDemandArtList, false);
 						jobDemandArtList.clear();
 					}
 				} catch (Exception e) {
@@ -144,7 +144,7 @@ public class SpiderFileProcessor {
 				}
 				line = br.readLine();
 			}
-			jobHRService.insertBatch(jobDemandArtList);
+			jobHRService.insertBatch(jobDemandArtList, false);
 			jobDemandArtList.clear();
 			CacheUtil.getInstance().clearCache(CommonConstants.PAGE_CACHE_KEY);
 		} catch (IOException e) {

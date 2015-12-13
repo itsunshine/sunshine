@@ -20,6 +20,7 @@ import com.boliao.sunshine.biz.processor.ArticleProcessor;
 import com.boliao.sunshine.biz.processor.BaseProcessor;
 import com.boliao.sunshine.biz.processor.DocProcessor;
 import com.boliao.sunshine.biz.processor.JobHRProcessor;
+import com.boliao.sunshine.biz.processor.PersonalInfoProcessor;
 import com.boliao.sunshine.biz.processor.QuestionProcessor;
 import com.boliao.sunshine.biz.processor.ToolProcessor;
 import com.boliao.sunshine.biz.processor.UserProcessor;
@@ -64,6 +65,11 @@ public class BaseServlet extends HttpServlet {
 	public static final String TOOL_KEY = "tool";
 	public static final String USER_KEY = "user";
 	public static final String HR_KEY = "hr";
+	/** 校内招聘的type */
+	public static final String HR_UNI_KEY = "hrUni";
+
+	/** 个人信息的type */
+	public static final String PERSONAL_INFO_INPUT = "personalInfoInput";
 
 	/** jobCity的服务类 */
 	JobCityService jobCityService = JobCityServiceImpl.getInstance();
@@ -114,6 +120,10 @@ public class BaseServlet extends HttpServlet {
 				p.process(request, response);
 				List<Object> list = new ArrayList<Object>();
 				String type = (String) request.getAttribute("type");
+				// 为了社招信息和校招信息暂时兼容,有了解决方案将下面代码删除掉
+				if (StringUtils.isBlank(type)) {
+					type = this.HR_KEY;
+				}
 				list.add(type);
 				request.removeAttribute("type");
 				String title = (String) request.getAttribute("title");
@@ -195,6 +205,9 @@ public class BaseServlet extends HttpServlet {
 		processMap.put(USER_KEY, userProcessor);
 		BaseProcessor hrProcessor = new JobHRProcessor();
 		processMap.put(HR_KEY, hrProcessor);
+		processMap.put(HR_UNI_KEY, hrProcessor);
+		BaseProcessor personalInfoProcessor = new PersonalInfoProcessor();
+		processMap.put(PERSONAL_INFO_INPUT, personalInfoProcessor);
 
 		// 向处理器链表里，按顺序加入需要的处理器，注意这里的添加顺序，会影响前台的展示顺序
 		processorList.add(hrProcessor);

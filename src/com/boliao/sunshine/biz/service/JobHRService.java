@@ -21,7 +21,7 @@ public interface JobHRService {
 	 * @param id
 	 * @return
 	 */
-	public JobDemandArt findJobDemandArtById(long id);
+	public JobDemandArt findJobDemandArtById(long id, boolean isUni);
 
 	/**
 	 * 分页查询工作职责对象
@@ -30,17 +30,17 @@ public interface JobHRService {
 	 * @param page
 	 * @return
 	 */
-	public PageBase<JobDemandArt> getPageJobDemandArtDesc(String field, PageBase<JobDemandArt> page);
+	public PageBase<JobDemandArt> getPageJobDemandArtDesc(String field, PageBase<JobDemandArt> page, boolean isUni);
 
 	/**
-	 * 分页查询工作职责对象
+	 * 根据条件分页查询工作职责对象
 	 * 
 	 * @param whereFs
 	 * @param field
 	 * @param page
 	 * @return
 	 */
-	public PageBase<JobDemandArt> queryPageJobDesc(Map<String, String> whereFs, String field, PageBase<JobDemandArt> page);
+	public PageBase<JobDemandArt> queryPageJobDesc(Map<String, String> whereFs, String field, PageBase<JobDemandArt> page, boolean isUni);
 
 	/**
 	 * 插入文章对象
@@ -48,7 +48,7 @@ public interface JobHRService {
 	 * @param jobDemandArt
 	 * @return
 	 */
-	public boolean insertJobDemandArt(JobDemandArt jobDemandArt);
+	public boolean insertJobDemandArt(JobDemandArt jobDemandArt, boolean isUni);
 
 	/**
 	 * 批量插入接口
@@ -60,5 +60,5 @@ public interface JobHRService {
 	 * @throws IllegalAccessException
 	 * @throws InvocationTargetException
 	 */
-	public void insertBatch(List<JobDemandArt> jobDemandArts);
+	public void insertBatch(List<JobDemandArt> jobDemandArts, boolean isUni);
 }

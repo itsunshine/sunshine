@@ -128,7 +128,8 @@ public class AbstractDao<T> {
 	}
 
 	@SuppressWarnings( { "static-access", "unchecked" })
-	public String insertString(T t, Class beanClazz) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
+	public String insertString(Object t, Class beanClazz) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException,
+			InvocationTargetException {
 		List<Field> fields = getFields(beanClazz);
 
 		String tableName = this.TABLE_PREFIX + beanClazz.getSimpleName().toLowerCase();
@@ -210,6 +211,7 @@ public class AbstractDao<T> {
 			}
 			return id;
 		} catch (Exception e) {
+			e.printStackTrace();
 			LogUtil.error(errorLog, "执行sql时出错，请检查sql：" + sql, e);
 		} finally {
 			DB.close(rs);
@@ -308,7 +310,14 @@ public class AbstractDao<T> {
 		return o;
 	}
 
-	// 真正执行分页查询。
+	/**
+	 * 根据sql执行查询操作
+	 * 
+	 * @param sql
+	 * @param beanClazz
+	 *            获取class中的fields，组装成查询sql
+	 * @return
+	 */
 	public List<T> executeQueryPage(String sql, Class<T> beanClazz) {
 		logger.info("接收到分页查询sql：" + sql);
 		Connection con = DB.getConn();
